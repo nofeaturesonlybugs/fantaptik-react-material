@@ -1,0 +1,52 @@
+{
+  "name": "@fantaptik/react-material",
+  "version": "0.0.1",
+  "description": "@fantaptik React component library using Materialize CSS.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/index.js"
+  ],
+  "scripts": {
+    "styleguidist": "npx styleguidist server",
+    "styleguidist-build": "npx styleguidist build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nofeaturesonlybugs/fantaptik-react-material.git"
+  },
+  "keywords": [
+    "@fantaptik",
+    "materialize",
+    "materializecss",
+    "react",
+    "reactjs",
+    "ui"
+  ],
+  "author": "Nofeatures Onlybugs",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.2",
+    "hoist-non-react-statics": "^3.3.2",
+    "materialize-css": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-styleguidist": "^11.0.8",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "yalc": "^1.0.0-pre.42"
+  },
+  "peerDependencies": {
+    "hoist-non-react-statics": "^3.3.2",
+    "materialize-css": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

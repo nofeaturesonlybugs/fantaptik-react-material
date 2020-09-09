@@ -1,0 +1,32 @@
+.slide-menu {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-menu .slide-menu-item {
+    display: inline-block;
+    background-color: transparent;
+    color: #ee6e73;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.slide-menu .slide-menu-item i {
+    line-height: 40px;
+    font-size: 2rem;
+}
+
+.slide-menu .slide-menu-indicator {
+    will-change: left, width;
+    display: block;
+
+    position: absolute;
+    left: 0px;
+    bottom: .9vh;
+    width: 0px;
+
+    height: .2vh;
+    color: transparent;
+    background-color: #ee6e73;
+    overflow: hidden;
+}

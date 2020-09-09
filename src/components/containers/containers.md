@@ -1,0 +1,1 @@
+*Containers* components group together other components such as inputs.
