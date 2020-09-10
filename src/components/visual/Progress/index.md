@@ -10,7 +10,6 @@ Different progress bars.
 
 Within a `Grid`.
 ```jsx
-import Grid from '../collections/Grid/Grid';
 <Grid>
     <Progress grid={[6]} value="10" />
     <Progress grid={[3]} value="40" />
@@ -20,7 +19,6 @@ import Grid from '../collections/Grid/Grid';
 
 The `show` attribute.
 ```jsx
-import Checkbox from '../inputs/Checkbox/Checkbox';
 const [ show, update ] = React.useState(true);
 <>
     <Checkbox checked={show} label="`show` is `true`" unchecked="`show` is `false`" 
@@ -32,7 +30,6 @@ const [ show, update ] = React.useState(true);
 
 The `hide` attribute.
 ```jsx
-import Checkbox from '../inputs/Checkbox/Checkbox';
 const [ hide, update ] = React.useState(false);
 <>
     <Checkbox checked={hide} label="`hide` is `true`" unchecked="`hide` is `false`" 

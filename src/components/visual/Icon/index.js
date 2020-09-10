@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import hocs from '../hocs';
+import hocs from '../../hocs';
 
 const Icon = ( { className, children, large, medium, small, tiny, ...props } ) => {
     const classes = [ "material-icons" ];

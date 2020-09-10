@@ -28,7 +28,6 @@ Different icons; use strings defined by Material+Icons.
 
 The `show` attribute.
 ```jsx
- Checkbox from '../inputs/Checkbox/Checkbox';
 const [ show, update ] = React.useState(true);
 <>
     <Checkbox checked={show} label="`show` is `true`" unchecked="`show` is `false`" 
@@ -43,7 +42,6 @@ const [ show, update ] = React.useState(true);
 
 The `hide` attribute.
 ```jsx
-import Checkbox from '../inputs/Checkbox/Checkbox';
 const [ hide, update ] = React.useState(false);
 <>
     <Checkbox checked={hide} label="`hide` is `true`" unchecked="`hide` is `false`" 

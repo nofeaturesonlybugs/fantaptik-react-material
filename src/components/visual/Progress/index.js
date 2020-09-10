@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { merge } from '../common';
-import hocs from '../hocs';
+import { merge } from '../../common';
+import hocs from '../../hocs';
 
 const Progress = ( { className, value, ...props } ) => {
     value = parseInt( value, 10 ); // TODO COULD RETURN NAN

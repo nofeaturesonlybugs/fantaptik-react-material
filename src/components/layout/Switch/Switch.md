@@ -1,8 +1,6 @@
 Switch example.
 
 ```jsx
-import Switch from './Switch';
-import SwitchCase from './SwitchCase';
 <Switch value="second">
     <SwitchCase value="first">
         <span>First</span>

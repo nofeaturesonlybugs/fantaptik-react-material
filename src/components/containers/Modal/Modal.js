@@ -5,7 +5,7 @@ import M from 'materialize-css';
 import hocs from '../../hocs';
 import { merge } from '../../common';
 
-import Icon from '../../Icon';
+import Icon from '../../visual/Icon';
 
 import ModalFooter from './ModalFooter';
 import { Hoc as ModalHoc } from './ModalHoc';

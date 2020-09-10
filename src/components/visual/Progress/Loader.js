@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { merge } from '../common';
-import hocs from '../hocs';
+import { merge } from '../../common';
+import hocs from '../../hocs';
 
 const Loader = ( { className, ...props } ) => {
     className = merge`${className} progress`;

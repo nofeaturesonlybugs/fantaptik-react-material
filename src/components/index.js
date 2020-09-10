@@ -25,9 +25,9 @@ export { default as SlideMenu } from './inputs/SlideMenu/SlideMenu';
 export { default as Toggle } from './inputs/Toggle/Toggle';
 
 // Visual components.
-export { default as Icon } from './Icon';
-export { default as Loader } from './Progress/Loader';
-export { default as Progress } from './Progress';
+export { default as Icon } from './visual/Icon';
+export { default as Loader } from './visual/Progress/Loader';
+export { default as Progress } from './visual/Progress';
 
 // Layout components.
 export { default as Hide } from './layout/Hide/Hide';
