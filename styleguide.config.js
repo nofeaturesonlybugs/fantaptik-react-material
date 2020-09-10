@@ -51,6 +51,18 @@ module.exports = {
             components : 'src/components/inputs/**/*.js',
             sectionDepth : 1,
         },
+        {
+            name : 'Layout',
+            content : 'src/components/layout/layout.md',
+            components : 'src/components/layout/**/*.js',
+            sectionDepth : 1,
+        },
+        {
+            name : 'Visual',
+            content : 'src/components/visual/visual.md',
+            components : 'src/components/visual/**/*.js',
+            sectionDepth : 1,
+        }
     ],
 
     //

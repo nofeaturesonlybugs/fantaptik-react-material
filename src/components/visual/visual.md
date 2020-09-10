@@ -2,4 +2,4 @@
 
 **Icon** implements Materialize CSS's *Icon* component.
 
-**Progress* implements Materialize CSS's *Preloader* component.
+**Progress** implements Materialize CSS's *Preloader* component.
