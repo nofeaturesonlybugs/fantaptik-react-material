@@ -1,0 +1,1 @@
+*Inputs* components are used to gather input from the user.

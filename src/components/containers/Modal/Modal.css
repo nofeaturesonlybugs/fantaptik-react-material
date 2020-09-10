@@ -1,0 +1,15 @@
+/**
+ * Sets modal close button to top right corner of widget.
+ */
+ .modal .modal-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+/**
+ * When a card is in a modal it has no margin.
+ */
+.modal .card {
+    margin: 0px;
+}
