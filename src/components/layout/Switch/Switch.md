@@ -2,14 +2,14 @@ Switch example.
 
 ```jsx
 <Switch value="second">
-    <SwitchCase value="first">
+    <Switch.Case value="first">
         <span>First</span>
-    </SwitchCase>
-    <SwitchCase value="second">
+    </Switch.Case>
+    <Switch.Case value="second">
         <span>Second</span>
-    </SwitchCase>
-    <SwitchCase value="third">
+    </Switch.Case>
+    <Switch.Case value="third">
         <span>Third</span>
-    </SwitchCase>
+    </Switch.Case>
 </Switch>
 ```

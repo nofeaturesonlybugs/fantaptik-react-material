@@ -24,7 +24,6 @@ import Hide from './src/components/layout/Hide/Hide';
 import Show from './src/components/layout/Show/Show';
 import Swap from './src/components/layout/Swap/Swap';
 import Switch from './src/components/layout/Switch/Switch';
-import SwitchCase from './src/components/layout/Switch/SwitchCase';
 
 global.hocs = hocs;
 
@@ -54,4 +53,3 @@ global.Show = Show;
 global.Hide = Hide;
 global.Swap = Swap;
 global.Switch = Switch;
-global.SwitchCase = SwitchCase;

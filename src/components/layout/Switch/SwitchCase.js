@@ -5,6 +5,8 @@ const SwitchCase = ( { children } ) => {
     return <>{children}</>;
 }
 
+SwitchCase.displayName = 'Switch.Case';
+
 SwitchCase.propTypes = {
     /** The value to switch on. */
     value : PropTypes.any.isRequired,

@@ -35,7 +35,6 @@ export { default as Show } from './layout/Show/Show';
 export { default as Swap } from './layout/Swap/Swap';
 
 export { default as Switch } from './layout/Switch/Switch';
-export { default as SwitchCase } from './layout/Switch/SwitchCase'; // TODO RM
 
 // High order components.
 export { default as hocs } from './hocs';
