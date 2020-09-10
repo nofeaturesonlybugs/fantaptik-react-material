@@ -5,7 +5,8 @@ import { merge } from '../../common';
 import hocs from '../../hocs';
 
 const Progress = ( { className, value, ...props } ) => {
-    value = parseInt( value, 10 ); // TODO COULD RETURN NAN
+    value = typeof value === "number" ? value : (typeof value === "string" ? parseInt( value, 10 ) : 0);
+    value = value !== NaN ? value : 0;
     const style = {
         width : value + "%",
     };
