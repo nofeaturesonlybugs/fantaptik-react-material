@@ -43,9 +43,9 @@ const FabItems = ( { children, className, round = true, ...props } ) => {
 const Fab = ( { children, className, icon, large, small, open, ...props } ) => {
     let fabLarge = large ? "large" : "";
     let fabSmall = small ? "small" : "";
+    const getElem = () => document.querySelector( 'div.fixed-action-btn' );
     const init = () => {
-        let elem = document.querySelector( 'div.fixed-action-btn' );
-        return M.FloatingActionButton.init( elem );
+        return M.FloatingActionButton.init( getElem() );
     }
     React.useEffect( () => {
         const elem = init();
@@ -53,8 +53,11 @@ const Fab = ( { children, className, icon, large, small, open, ...props } ) => {
             elem.open();
         } else {
             // elem.close(); // Material docs indicate this should work but it does not appear to.
-            document.querySelector( 'div.fixed-action-btn' ).classList.remove( "active" );
+            getElem().classList.remove( "active" );
         }
+        return () => {
+            elem.destroy();
+        };
     }, [open] );
     className = merge`${className} fixed-action-btn ${fabLarge} ${fabSmall}`;
     return (
