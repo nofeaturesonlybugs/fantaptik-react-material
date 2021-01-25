@@ -1,6 +1,8 @@
 // Collection components.
 export { default as Carousel } from './collections/Carousel/Carousel';
 
+export { default as Fab } from './collections/Fab/Fab';
+
 export { default as Grid } from './collections/Grid/Grid';
 
 export { default as List } from './collections/List/List';
