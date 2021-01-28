@@ -118,11 +118,9 @@ const Position = ( { children, className, at, put, sameHeight, sameWidth, target
             //
             at = getBoxPoint( reference, at );
             put = getBoxPoint( container, put );
-            [ put.x, put.y ] = [put.x - container.x, put.y - container.y];
-            // console.log("at vs put",at,put); //TODO RM
+            [ put.x, put.y ] = [ put.x - container.x, put.y - container.y ];
             mergeStyle.left = ( at.x - put.x ) + "px";
             mergeStyle.top = ( at.y - put.y )+ "px";
-            // console.log("updateMergeStyle",mergeStyle); // TODO RM
             updateMergeStyle( { ...mergeStyle } );
         }
     }, [target, at, put] );
