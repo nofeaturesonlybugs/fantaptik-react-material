@@ -1,5 +1,19 @@
 `Fab` implements Materialize CSS's *Floating Action Button* component.
 
+##### CSS targets
+```css 
+div.fixed-action-btn {}                 /* Fab div. */
+div.fixed-action-btn button {}          /* Primary button. */
+div.fixed-action-btn ul {}              /* Secondary button(s) container. */
+div.fixed-action-btn ul li {}           /* Secondary button(s) individual button container. */
+
+
+div.fixed-action-btn.large {}           /* Primary button is large. */
+div.fixed-action-btn.small {}           /* Primary button is small. */
+div.fixed-action-btn ul.large {}        /* Secondary buttons are large. */
+div.fixed-action-btn ul.small {}        /* Secondary buttons are small. */
+```
+
 ```jsx
 const [small, updateSmall] = React.useState( false );
 const [large, updateLarge] = React.useState( false );
