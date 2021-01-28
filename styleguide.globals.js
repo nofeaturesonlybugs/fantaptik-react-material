@@ -21,10 +21,14 @@ import Select from './src/components/inputs/Select/Select';
 import Text from './src/components/inputs/Text/Text';
 import Toggle from './src/components/inputs/Toggle/Toggle';
 
+import Position from './src/components/position/Position/Position';
+
 import Hide from './src/components/layout/Hide/Hide';
 import Show from './src/components/layout/Show/Show';
 import Swap from './src/components/layout/Swap/Swap';
 import Switch from './src/components/layout/Switch/Switch';
+
+import RectBoxes from './src/components/tackle/RectBoxes/RectBoxes';
 
 global.hocs = hocs;
 
@@ -51,7 +55,11 @@ global.Text = Text;
 
 global.Toggle = Toggle;
 
+global.Position = Position;
+
 global.Show = Show;
 global.Hide = Hide;
 global.Swap = Swap;
 global.Switch = Switch;
+
+global.RectBoxes = RectBoxes;
