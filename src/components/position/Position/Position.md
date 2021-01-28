@@ -1,5 +1,11 @@
 `Position` positions its child element relative to a target element.
 
+##### Important
+This component does not update `child` during:  
+* Window resizes or scrolls
+* `child` resizes or positional changes
+* `target` resizes
+
 ##### CSS targets
 ```css 
 div.position-container {}               /* The `child` element will be wrapped in this div. */
