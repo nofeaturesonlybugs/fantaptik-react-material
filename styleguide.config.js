@@ -58,6 +58,18 @@ module.exports = {
             sectionDepth : 1,
         },
         {
+            name : 'Position',
+            content : 'src/components/position/position.md',
+            components : 'src/components/position/**/*.js',
+            sectionDepth : 1,
+        },
+        {
+            name : 'Tackle',
+            content : 'src/components/tackle/tackle.md',
+            components : 'src/components/tackle/**/*.js',
+            sectionDepth : 1,
+        },
+        {
             name : 'Visual',
             content : 'src/components/visual/visual.md',
             components : 'src/components/visual/**/*.js',

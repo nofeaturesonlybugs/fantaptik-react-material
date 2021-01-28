@@ -1,0 +1,1 @@
+*Tackle* components may be of limited use outside this library; think of them as *fishing tackle*.
