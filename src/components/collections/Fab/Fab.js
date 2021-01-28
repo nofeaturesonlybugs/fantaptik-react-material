@@ -70,8 +70,8 @@ const Fab = ( { children, className, icon, large, small, open, ...props } ) => {
     );
 }
 
-Fab.Items = FabItems;
-Fab.Item = FabItem;
+Fab.Items = hocs.Show( hocs.Hide( FabItems ) );
+Fab.Item = hocs.Show( hocs.Hide( FabItem ) );
 
 Fab.propTypes = {
     /** Create a large button by setting this to true. */
