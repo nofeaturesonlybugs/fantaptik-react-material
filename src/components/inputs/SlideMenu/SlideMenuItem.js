@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SlideMenuItem = ( { children, onClick, selected, value, ...props } ) => {
+import { merge } from '../../common';
+
+const SlideMenuItem = ( { children, className, onClick, selected, value, ...props } ) => {
     const addClass = [ "slide-menu-item" ];
     if( selected ) {
         addClass.push( "selected" );
     }
+    className = merge`${addClass} ${className}`;
     return (
-        <div {...props} className={addClass.join( " " )} onClick={() => onClick( value )}>
+        <div {...props} className={className} onClick={() => onClick( value )}>
             {children}
         </div>
     );

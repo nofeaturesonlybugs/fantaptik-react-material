@@ -1,6 +1,8 @@
 // Collection components.
 export { default as Carousel } from './collections/Carousel/Carousel';
 
+export { default as Fab } from './collections/Fab/Fab';
+
 export { default as Grid } from './collections/Grid/Grid';
 
 export { default as List } from './collections/List/List';
@@ -35,6 +37,12 @@ export { default as Show } from './layout/Show/Show';
 export { default as Swap } from './layout/Swap/Swap';
 
 export { default as Switch } from './layout/Switch/Switch';
+
+// Position components.
+export { default as Position } from './position/Position/Position';
+
+// Tackle components.
+export { default as RectBoxes } from './tackle/RectBoxes/RectBoxes';
 
 // High order components.
 export { default as hocs } from './hocs';

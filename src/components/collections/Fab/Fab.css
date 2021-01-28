@@ -1,0 +1,28 @@
+div.fixed-action-btn ul {
+    bottom : 40px;
+}
+
+div.fixed-action-btn.small ul {
+    bottom : 30px;
+}
+
+div.fixed-action-btn.large ul {
+    bottom : 50px;
+}
+
+div.fixed-action-btn ul.small {
+    bottom : 35px;
+}
+
+div.fixed-action-btn ul.large {
+    bottom : 55px;
+}
+
+div.fixed-action-btn.small ul.large {
+    bottom : 35px;
+    left: -12px;
+}
+
+div.fixed-action-btn.large ul.small {
+    bottom : 55px;
+}
