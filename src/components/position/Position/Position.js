@@ -64,11 +64,11 @@ const calcStyles = ( targetNode, referenceNode, { referenceAt, sameHeight, sameW
         //
         if( sameHeight ) {
             target.height = reference.height;
-            style.height = reference.height + "px";
+            styles.height = reference.height + "px";
         }
         if( sameWidth ) {
             target.width = reference.width;
-            style.width = reference.width + "px";
+            styles.width = reference.width + "px";
         }
         //
         const put = getBoxPoint( target, targetAt );
