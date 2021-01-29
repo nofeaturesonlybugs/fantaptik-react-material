@@ -15,3 +15,5 @@ The following browser features are required by the listed components; for highes
 
 + `ResizeObserver` is used by:
     + `Position`
++ `Web Animations API` is used by:
+    + `SlideMenu`
