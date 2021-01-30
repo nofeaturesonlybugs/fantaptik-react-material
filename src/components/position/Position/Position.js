@@ -7,8 +7,6 @@ import { merge } from '../../common';
 
 import './Position.css';
 
-// TODO Does not work if page is afterwards scrolled or `target` changes position.
-
 /**
  * `getBoxPoint` accepts a box and returns the point specified by `at`.
  * 
@@ -39,9 +37,47 @@ const getBoxPoint = ( box, at ) => {
         case "center":
             return { x : x + halfX, y : y + halfY };
         default:
-            at = { x : 0, y : 0 };
-            break;
+            return { x : 0, y : 0 };
     }
+}
+
+/**
+ * `calcStyles` creates a style object containing the necessary styles to position `target`
+ * relative to `reference` according to any given `options`.
+ * 
+ * @param {HTMLElement} targetNode The page element to calculate styles for.
+ * @param {HTMLElement} referenceNode The page element to use as a reference point.
+ * @param {Object} options A configuration object.
+ * @param {boolean} options.sameHeight `true` if target's height should match the reference node's height.
+ * @param {boolean} options.sameWidth `true` if target's width should match the reference node's width.
+ * @param {string} options.targetAt Specify the reference point on target; see `at` argument for `getBoxPoint`
+ * @param {string} options.referenceAt Specify the reference point on reference; see `at` argument for `getBoxPoint`
+ * @returns {Object} CSS styles that can be applied to `target`.
+ */
+const calcStyles = ( targetNode, referenceNode, { referenceAt, sameHeight, sameWidth, targetAt, } ) => {
+    const styles = {};
+    if( targetNode && referenceNode ) {
+        styles.position = "fixed";
+        //
+        const { borderBox : target } = getBox( targetNode );
+        const { borderBox : reference } = getBox( referenceNode );
+        //
+        if( sameHeight ) {
+            target.height = reference.height;
+            styles.height = reference.height + "px";
+        }
+        if( sameWidth ) {
+            target.width = reference.width;
+            styles.width = reference.width + "px";
+        }
+        //
+        const put = getBoxPoint( target, targetAt );
+        const at = getBoxPoint( reference, referenceAt );
+        [ put.x, put.y ] = [ put.x - target.x, put.y - target.y ];
+        styles.left = ( at.x - put.x ) + "px";
+        styles.top = ( at.y - put.y ) + "px";
+    }
+return styles;
 }
 
 /**
@@ -80,53 +116,71 @@ const PositionMnemonic = ( { at, put } ) => {
 }
 
 const Position = ( { children, className, at, put, sameHeight, sameWidth, target, ...props } ) => {
-    const containerRef = React.useRef();
-    const [mergeStyle, updateMergeStyle] = React.useState( { position : "fixed", } );
-    const [containerClass, updateContainerClass] = React.useState( "" );
-    React.useEffect( () => {
-        target = Array.isArray( target ) ? target : [ target ];
+    const [styles, setStyles] = React.useState( {} );
+    const [container, setContainer] = React.useState( null );
+    const [targetState, setTarget] = React.useState( { node : null, body : false } );
+    const ref = React.useCallback( node => {
+        setContainer( node );
+    }, [] );
+    //
+    // findTarget locates the target node or defaults to body.
+    const findTarget = t => {
+        t = Array.isArray( t ) ? t : [ t ];
         let node;
-        for( let k = 0; ! node && k < target.length; k++ ) {
-            node = document.querySelector( target[ k ] );
+        let body = false;
+        for( let k = 0; ! node && k < t.length; k++ ) {
+            node = document.querySelector( t[ k ] );
         }
         if( ! node ) {
-            // If target was not found then put in center of body.
             node = document.querySelector( "body" );
-            [ put, at ] = [ "center", "center" ];
-            updateContainerClass( "used-body" );
-        } else {
-            updateContainerClass( "" );
+            body = true;
         }
-        if( node && containerRef.current && containerRef.current.firstChild ) {
-            // Eliminate any positional properties.
-            delete mergeStyle.top;
-            delete mergeStyle.bottom;
-            delete mergeStyle.left;
-            delete mergeStyle.right;
-            const box = getBox( node );
-            const { borderBox : container } = getBox( containerRef.current.firstChild );
-            const { borderBox : reference } = getBox( node );
+        setTarget( { node, body } );
+    }
+    //
+    // On first load and any time target changes we must update targetNode.
+    React.useEffect( () => {
+        findTarget( target );
+    }, [] );
+    React.useEffect( () => {
+        findTarget( target );
+    }, [target] );
+    //
+    // Anytime our nodes or positional strings change we update styles.
+    React.useEffect( () => {
+        let rv = () => null;
+        if( container && targetState.node ) {
             //
-            if( sameHeight ) {
-                container.height = reference.height;
-                mergeStyle.height = reference.height + "px";
+            if( targetState.body ) {
+                [put, at] = ["center", "center"];
             }
-            if( sameWidth ) {
-                container.width = reference.width;
-                mergeStyle.width = reference.width + "px";
-            }
+            put = put || "center";
+            at = at || "center";
             //
-            at = getBoxPoint( reference, at );
-            put = getBoxPoint( container, put );
-            [ put.x, put.y ] = [ put.x - container.x, put.y - container.y ];
-            mergeStyle.left = ( at.x - put.x ) + "px";
-            mergeStyle.top = ( at.y - put.y )+ "px";
-            updateMergeStyle( { ...mergeStyle } );
+            const update = () => setStyles(
+                calcStyles( container, targetState.node, {
+                    sameHeight, sameWidth, targetAt : put, referenceAt : at,
+                } )
+            );
+            const resizeObserver = new ResizeObserver( entries => {
+                update();
+            } );
+            resizeObserver.observe( container );
+            resizeObserver.observe( targetState.node );
+            //
+            document.addEventListener( 'scroll', update );
+            //
+            rv = () => {
+                resizeObserver.disconnect();
+                document.removeEventListener( "scroll", update );
+            }
         }
-    }, [target, at, put] );
+        return rv;
+    }, [container, targetState, at, put, sameHeight, sameWidth] );
+    const containerClass = targetState.body ? "used-body" : "";
     className = merge`position-container ${className} ${containerClass}`;
     return (
-        <div ref={containerRef} className={className} style={ { ...mergeStyle } }>
+        <div ref={ref} className={className} style={styles}>
             {children}
         </div>
     );

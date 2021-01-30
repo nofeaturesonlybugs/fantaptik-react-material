@@ -85,3 +85,21 @@ const [show, update] = React.useState( false );
     </Show>
 </>
 ```
+
+`Position` updates both `child` and `target` on page scrolling and element resizing.
+```jsx
+const [childSize, setChild] = React.useState( 20 );
+const [targetSize, setTarget] = React.useState( 200 );
+<>
+    <p className="range-field">
+        <input value={childSize} type="range" min="20" max="200" onChange={ e => setChild( e.target.value ) } />
+    </p>
+    <p className="range-field">
+        <input value={targetSize} type="range" min="20" max="600" onChange={ e => setTarget( e.target.value ) } />
+    </p>
+    <Position.DemoTarget width={targetSize} className="resizing-target light-blue lighten-2" />
+    <Position target=".resizing-target">
+        <Position.DemoChild width={childSize} className="black" style={ { opacity : ".5" } } />
+    </Position>
+</>
+```
