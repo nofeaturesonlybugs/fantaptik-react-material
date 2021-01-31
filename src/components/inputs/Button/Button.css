@@ -1,0 +1,5 @@
+/* Fix material-icons inside a button that don't have "left" or "right" class set on them. */
+button i.material-icons:not( .left ):not( .right ) {
+    float : left;
+    margin-right : 5px;
+}

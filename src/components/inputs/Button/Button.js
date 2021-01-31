@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import hocs from '../../hocs';
 import { merge } from '../../common';
 
+import './Button.css';
+
 const Button = ( { children, className, large, round, small, ...props } ) => {
     let addClasses = [ "btn" ];
     if( round === true ) {

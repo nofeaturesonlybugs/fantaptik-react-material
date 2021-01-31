@@ -9,7 +9,10 @@ button.btn-large {}                 /* Large button. */
 ```
 
 ```jsx
-<Button>Click me!</Button>
+<>
+    <Button>Click me!</Button>
+    <Button><Icon />With Icon</Button>
+</>
 ```
 
 Round button with an icon.
