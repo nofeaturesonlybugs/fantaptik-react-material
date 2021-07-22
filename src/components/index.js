@@ -39,7 +39,7 @@ export { default as Swap } from './layout/Swap/Swap';
 export { default as Switch } from './layout/Switch/Switch';
 
 // Position components.
-export { default as Position } from './position/Position/Position';
+export { default as Position } from './positional/Position/Position';
 
 // Tackle components.
 export { default as RectBoxes } from './tackle/RectBoxes/RectBoxes';
