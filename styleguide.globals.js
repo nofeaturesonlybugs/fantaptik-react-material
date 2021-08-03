@@ -21,7 +21,7 @@ import Select from './src/components/inputs/Select/Select';
 import Text from './src/components/inputs/Text/Text';
 import Toggle from './src/components/inputs/Toggle/Toggle';
 
-import Position from './src/components/position/Position/Position';
+import Position from './src/components/positional/Position/Position';
 
 import Hide from './src/components/layout/Hide/Hide';
 import Show from './src/components/layout/Show/Show';

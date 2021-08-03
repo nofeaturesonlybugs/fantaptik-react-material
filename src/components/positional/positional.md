@@ -1,0 +1,1 @@
+*Positional* components can help position elements on the page.

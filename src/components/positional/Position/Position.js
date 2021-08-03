@@ -5,6 +5,7 @@ import { getBox } from 'css-box-model';
 
 import { merge } from '../../common';
 
+import PositionFill from './PositionFill'; 
 import './Position.css';
 
 /**
@@ -188,6 +189,7 @@ const Position = ( { children, className, at, put, sameHeight, sameWidth, target
 
 Position.DemoChild = PositionDemoChild;
 Position.DemoTarget = PositionDemoTarget;
+Position.Fill = PositionFill; 
 Position.Mnemonic = PositionMnemonic;
 
 Position.propTypes = {
