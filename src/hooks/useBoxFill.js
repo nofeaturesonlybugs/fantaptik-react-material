@@ -7,7 +7,7 @@ import { findNode } from '../js';
 /**
  * The result type for the `useBoxFill` hook.
  * 
- * @typedef useBoxFillResult
+ * @typedef hooks.useBoxFillResult
  * @type {Object}
  * @property {number} width The calcualted width in pixels.
  * @property {number} height The calcualted height in pixels.
@@ -20,15 +20,13 @@ import { findNode } from '../js';
  * 
  * `ResizeObserver` is required for this hook to function; consider using a polyfill for older browsers.  
  * 
+ * @name hooks.useBoxFill
+ * @static
+ * @function
+ * 
  * @param {Element|string} [container=Document] A bounding container; if null then document is used.
  * @param {Element[]|string[]} [widthTargets=[]] A list of elements whose widths are subtracted from the bounding width.
  * @param {Element[]|string[]} [heightTargets=[]] A list of elements whose heights are subtracted from the bounding height.
- * @example
- * import hooks from '@fantaptik/react-material';
- * hooks.useBoxFill(...);
- * 
- * import { useBoxFill } from '@fantaptik/react-material/hooks';
- * useBoxFill(...);
  * @example
  * // Fullscreen
  * const widthWatches = [ "#leftbar", "#rightbar" ];
@@ -43,7 +41,7 @@ import { findNode } from '../js';
  * // Fullscreen heights only.
  * const heightWatches = [ "#header", "#footer" ];
  * const { width, height } = useBoxFill( null, null, heightWatches );
- * @returns {useBoxFillResult}
+ * @returns {hooks.useBoxFillResult}
  */
 const useBoxFill = ( container, widthTargets, heightTargets ) => {
     widthTargets = Array.isArray( widthTargets ) ? widthTargets : [];
