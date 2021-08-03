@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>js/index.js - Documentation</title>
+    <title>hooks/index.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">js/index.js</h1>
+    <h1 class="page-title">hooks/index.js</h1>
     
 
     
@@ -43,33 +43,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * `findNode` accepts an Element or CSS selector and returns Element.  In the case that `e` is
- * already an Element this function just returns the argument.
+ * @namespace hooks
  * 
- * @function
- * @param {Element|string} e The Element or CSS selector to return.
  * @example
- * import js from '@fantaptik/react-material';
- * const container = js.findNode( "#container" );
+ * // Keeping hooks namespace.
+ * import hooks from '@fantaptik/react-material';
+ * 
+ * const fill = hooks.useBoxFill( "#container", ["#w1", "#w2"], ["#h1", "#h2"] );
  * @example
- * import { findNode } from '@fantaptik/react-material/js';
- * const container = findNode( "#container" ); // Returns Element if exists on page.
- * const c2 = findNode( container ) // Just returns container.
- * const notFound = findNode( "#lsjdfljsldkfjlsdfjlsf" ); // Probably doesn't exist so notFound is false.
- * @returns {Element|false}
+ * // Ignoring hooks namespace.
+ * import { useBoxFill } from '@fantaptik/react-material';
+ * 
+ * const fill = useBoxFill( "#container", ["#w1", "#w2"], ["#h1", "#h2"] );
  */
-export const findNode = e => {
-    if( e instanceof Element ) {
-        return e;
-    }
-    let n = document.querySelector( e );
-    if( n ) {
-        return n;
-    }
-    return false;
-}
 
-export default { findNode };</code></pre>
+export { default as useBoxFill } from './useBoxFill';
+
+import useBoxFill from './useBoxFill';
+
+export default { useBoxFill };</code></pre>
         </article>
     </section>
 
