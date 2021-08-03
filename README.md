@@ -14,6 +14,6 @@ View the Styleguidist @ https://nofeaturesonlybugs.github.io/fantaptik-react-mat
 The following browser features are required by the listed components; for highest possible compatibility consider adding appropriate PolyFills.
 
 + `ResizeObserver` is used by:
-    + `Position`
+    + `Position`, `Position.Fill`, & `useBoxFill`
 + `Web Animations API` is used by:
     + `SlideMenu`
