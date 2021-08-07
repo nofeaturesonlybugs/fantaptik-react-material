@@ -17,6 +17,7 @@ module.exports = {
         library : "FantaptikReactMaterial",
         libraryTarget : "umd",
     },
+    devtool : "eval-source-map",
     plugins : [
         // Clean dist for every build.
         new CleanWebpackPlugin(),

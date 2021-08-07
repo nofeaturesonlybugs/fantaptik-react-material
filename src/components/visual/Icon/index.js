@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { merge } from '../../common';
 import hocs from '../../hocs';
 
 const Icon = ( { className, children, large, medium, small, tiny, ...props } ) => {
@@ -9,12 +10,11 @@ const Icon = ( { className, children, large, medium, small, tiny, ...props } ) =
     medium === true && classes.push( "medium" );
     small === true && classes.push( "small" );
     tiny === true && classes.push( "tiny" );
-    props = {
-        ...props,
-        className : classes.join( " " ) + " " + (className || ""),
-    };
+    //
+    className = merge`${className} ${classes}`;
+    //
     return (
-        <i {...props}>{children}</i>
+        <i className={className} {...props}>{children}</i>
     )
 };
 
