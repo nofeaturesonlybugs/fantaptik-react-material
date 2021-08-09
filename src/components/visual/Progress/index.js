@@ -12,7 +12,7 @@ const Progress = ( { className, value, ...props } ) => {
     };
     className = merge`${className} progress`;
     return (
-        <div className={className}>
+        <div className={className} {...props}>
             <div className="determinate" style={style} />
         </div>
     );
