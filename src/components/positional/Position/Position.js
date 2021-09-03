@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import { getBox } from 'css-box-model';
@@ -74,6 +75,18 @@ const calcStyles = ( targetNode, referenceNode, { referenceAt, sameHeight, sameW
         //
         const put = getBoxPoint( target, targetAt );
         const at = getBoxPoint( reference, referenceAt );
+        //
+        // If the referenceNode or any of its parents has a zIndex property we want to
+        // copy to get the same z-order on the page. 
+        const regexpZIndex = /[0-9]+/;
+        for( let node = referenceNode; node instanceof Element; node = node.parentNode ) {
+            let computed = window.getComputedStyle( node );
+            if( regexpZIndex.test( computed.zIndex ) ) {
+                styles.zIndex = computed.zIndex;
+                break;
+            }
+        }
+        //
         [ put.x, put.y ] = [ put.x - target.x, put.y - target.y ];
         styles.left = ( at.x - put.x ) + "px";
         styles.top = ( at.y - put.y ) + "px";
@@ -180,10 +193,15 @@ const Position = ( { children, className, at, put, sameHeight, sameWidth, target
     }, [container, targetState, at, put, sameHeight, sameWidth] );
     const containerClass = targetState.body ? "used-body" : "";
     className = merge`position-container ${className} ${containerClass}`;
-    return (
-        <div ref={ref} className={className} style={styles}>
-            {children}
-        </div>
+    return ReactDOM.createPortal(
+        // This component markup
+        (
+            <div ref={ref} className={className} style={styles}>
+                {children}
+            </div>
+        ),
+        // Renders under here
+        document.querySelector( "body" )
     );
 }
 
