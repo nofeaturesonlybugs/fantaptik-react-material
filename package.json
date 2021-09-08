@@ -9,7 +9,7 @@
   "scripts": {
     "build-dev": "npx webpack --mode development",
     "build": "npx webpack --mode production",
-    "alldocs": "npm run-script jsdoc && npm run-script styleguidist-build",
+    "alldocs": "npm run-script jsdoc && npm run-script styleguidist-build && node build.merge-docs.js",
     "jsdoc": "jsdoc -c jsdoc.config.js -R README.md",
     "styleguidist": "npx styleguidist server",
     "styleguidist-build": "npx styleguidist build",
@@ -40,6 +40,7 @@
     "css-box-model": "^1.2.1",
     "css-loader": "^4.2.2",
     "docdash": "^1.2.0",
+    "fs-extra": "^10.0.0",
     "hoist-non-react-statics": "^3.3.2",
     "jsdoc": "^3.6.7",
     "materialize-css": "^1.0.0",

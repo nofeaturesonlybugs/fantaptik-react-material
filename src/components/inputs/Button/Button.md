@@ -20,6 +20,13 @@ Round button with an icon.
 <Button round><Icon /></Button>
 ```
 
+`icon` and `label` properties.
+```jsx
+<Button icon="exit_to_app" label="Exit Application" />
+<br />
+<Button icon={<Icon>exit_to_app</Icon>} label="Exit Application" />
+```
+
 Disabled buttons.
 ```jsx
 <>
