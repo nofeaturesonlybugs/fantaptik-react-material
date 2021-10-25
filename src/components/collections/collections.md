@@ -2,6 +2,8 @@
 
 **Carousel** implements Materialize CSS's *Carousel* component.
 
+**Collapsible** implements Materalize CSS's collapsible component.
+
 **Fab** implements Materialize CSS's *Floating Action Button* component.
 
 **Grid** implements Materialize CSS's *Grid* system.
