@@ -3,6 +3,7 @@
 import hocs from './src/components/hocs';
 
 import Carousel from './src/components/collections/Carousel/Carousel';
+import Collapsible from './src/components/collections/Collapsible/Collapsible';
 import Fab from './src/components/collections/Fab/Fab';
 import Grid from './src/components/collections/Grid/Grid';
 import List from './src/components/collections/List/List';
@@ -33,6 +34,7 @@ import RectBoxes from './src/components/tackle/RectBoxes/RectBoxes';
 global.hocs = hocs;
 
 global.Carousel = Carousel;
+global.Collapsible = Collapsible;
 global.Fab = Fab;
 global.Grid = Grid;
 global.List = List;
