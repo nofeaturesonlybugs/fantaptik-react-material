@@ -1,6 +1,6 @@
 {
   "name": "@fantaptik/react-material",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "@fantaptik React component library using Materialize CSS.",
   "main": "dist/index.js",
   "files": [
